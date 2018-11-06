@@ -163,7 +163,7 @@ public class HashSetPractice {
 //        if (first.isEmpty()) isEqual = true;
 
         first.retainAll(second);
-        if (first.size() == second.size()) isEqual = true;
+        if (!second.isEmpty() && first.size() == second.size()) isEqual = true;
 
         return isEqual;
     }
