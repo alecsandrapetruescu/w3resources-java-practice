@@ -43,6 +43,8 @@ public class BasePart1PracticeConverters {
      * <p>
      * Expected Output
      * Hexadecimal number is : F
+     *
+     * @param scanner
      */
     private static void convertDecimalToHexadecimal(Scanner scanner) {
         System.out.print("Input a Decimal Number: ");
@@ -57,6 +59,8 @@ public class BasePart1PracticeConverters {
      * <p>
      * Expected Output:
      * Octal number is: 17
+     *
+     * @param scanner
      */
     private static void convertDecimalToOctal(Scanner scanner) {
         System.out.print("Input a Decimal Number: ");
@@ -71,6 +75,8 @@ public class BasePart1PracticeConverters {
      * <p>
      * Expected Output:
      * Decimal Number: 4
+     *
+     * @param scanner
      */
     private static void convertBinaryToDecimal(Scanner scanner) {
         System.out.print("Input a binary Number: ");
@@ -84,6 +90,8 @@ public class BasePart1PracticeConverters {
      * <p>
      * Expected Output:
      * HexaDecimal value: D
+     *
+     * @param scanner
      */
     private static void convertBinaryToHexadecimal(Scanner scanner) {
         System.out.print("Input a binary Number: ");
@@ -98,6 +106,8 @@ public class BasePart1PracticeConverters {
      * <p>
      * Expected Output:
      * Octal number: 7
+     *
+     * @param scanner
      */
     private static void convertBinaryToOctal(Scanner scanner) {
         System.out.print("Input a binary Number: ");
@@ -112,6 +122,8 @@ public class BasePart1PracticeConverters {
      * <p>
      * Expected Output:
      * Equivalent decimal number: 8
+     *
+     * @param scanner
      */
     private static void convertOctalToDecimal(Scanner scanner) {
         System.out.print("Input a binary Number: ");
@@ -126,6 +138,8 @@ public class BasePart1PracticeConverters {
      * <p>
      * Expected Output:
      * Equivalent binary number: 111
+     *
+     * @param scanner
      */
     private static void convertOctalToBinary(Scanner scanner) {
         System.out.print("Input a octal Number: ");
@@ -140,6 +154,8 @@ public class BasePart1PracticeConverters {
      * <p>
      * Expected Output:
      * Equivalent hexadecimal number: 40
+     *
+     * @param scanner
      */
     private static void convertOctalToHexadecimal(Scanner scanner) {
         System.out.print("Input a octal Number: ");
@@ -154,6 +170,8 @@ public class BasePart1PracticeConverters {
      * <p>
      * Expected Output:
      * Equivalent decimal number is: 37
+     *
+     * @param scanner
      */
     private static void convertHexadecimalToDecimal(Scanner scanner) {
         System.out.print("Input a octal Number: ");
@@ -168,6 +186,8 @@ public class BasePart1PracticeConverters {
      * <p>
      * Expected Output:
      * Equivalent Binary Number is: 110111
+     *
+     * @param scanner
      */
     private static void convertHexadecimalToBinary(Scanner scanner) {
         System.out.print("Input a octal Number: ");
@@ -182,6 +202,8 @@ public class BasePart1PracticeConverters {
      * <p>
      * Expected Output:
      * Equivalent of octal number is: 100
+     *
+     * @param scanner
      */
     private static void convertHexadecimalToOctal(Scanner scanner) {
         System.out.print("Input a octal Number: ");
@@ -195,6 +217,8 @@ public class BasePart1PracticeConverters {
      *
      * Input a number(string): 25
      * The integer value is: 25
+     *
+     * @param scanner
      */
     private static void convertToInteger(Scanner scanner) {
         String numberAsString = scanner.next();
