@@ -37,7 +37,8 @@ public class BasePart1Practice {
 //        printFileSize("/home/students/abc.txt");
 //        printSystemTime();
 //        printCurrentDateTimeFormated();
-        printOddNumbers();
+//        printOddNumbers();
+        printCheckEvenNumber(scanner);
     }
 
     /**
@@ -541,6 +542,15 @@ public class BasePart1Practice {
      * Input a number: 20
      * 1
      */
+    private static void printCheckEvenNumber(Scanner scanner) {
+        System.out.println("Input number:");
+        int number = getIntegerNumber(scanner);
+        if (number % 2 == 0) {
+            System.out.println(1);
+        } else {
+            System.out.println(0);
+        }
+    }
 
     /**
      * 50. Write a Java program to print numbers between 1 to 100 which are divisible by 3, 5 and by both.
