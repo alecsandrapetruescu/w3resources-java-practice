@@ -29,7 +29,8 @@ public class BasePart1PracticeStrings {
 //        printFirstHalf(scanner);
 //        createStringFromTwoStrings(scanner);
 //        concatenateTwoStringsAndRemoveFirstChar(scanner);
-        createThreeCharStringFromString(scanner);
+//        createThreeCharStringFromString(scanner);
+        createStringWithFirstAndLastCharFromTwoStrings(scanner);
     }
 
     /**
@@ -410,7 +411,7 @@ public class BasePart1PracticeStrings {
      * of the given string is less than 3 use "#" as substitute characters.
      * Test Data: Str1 = " "
      * Sample Output:
-     *
+     * <p>
      * ###
      *
      * @param scanner
@@ -421,7 +422,7 @@ public class BasePart1PracticeStrings {
         String newWord = "";
         if (word.length() >= 3) {
             newWord = word.substring(0, 3);
-        } else if(word.length() == 1) {
+        } else if (word.length() == 1) {
             newWord = word + "##";
         } else {
             newWord = "###";
@@ -435,9 +436,21 @@ public class BasePart1PracticeStrings {
      * Test Data: str1 = "Python"
      * str2 = " "
      * Sample Output:
-     *
+     * <p>
      * P#
+     *
+     * @param scanner
      */
+    private static void createStringWithFirstAndLastCharFromTwoStrings(Scanner scanner) {
+        System.out.println("Enter first word:");
+        String firstWord = scanner.next();
+        System.out.println("Enter second word:");
+        String secondWord = scanner.next();
+        String firstChar = (firstWord.length() == 0) ? "#" : "" + firstWord.charAt(0);
+        String lastChar = (secondWord.length() == 0) ? "#" : "" + secondWord.charAt(secondWord.length() - 1);
+        String result = firstChar + lastChar;
+        System.out.println(String.format("Sample Output: %s", result));
+    }
 
     /**
      * 84. Write a Java program to take the last three characters from a given string and add the three characters at
