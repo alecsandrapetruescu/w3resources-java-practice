@@ -25,7 +25,8 @@ public class BasePart1PracticeStrings {
 //        penultimateWord(scanner);
 //        reverseWord(scanner);
 //        insertWordInTheMiddle(scanner);
-        duplicateLastChars(scanner);
+//        duplicateLastChars(scanner);
+        printFirstHalf(scanner);
     }
 
     /**
@@ -333,7 +334,14 @@ public class BasePart1PracticeStrings {
      * Test Data: Python
      * Sample Output:
      * Pyt
+     *
+     * @param scanner
      */
+    private static void printFirstHalf(Scanner scanner) {
+        System.out.println("Test Data:");
+        String word = scanner.next();
+        System.out.println(String.format("Sample Output: %s", word.substring(0, Math.round(word.length()/2))));
+    }
 
     /**
      * 70. Write a Java program to create a string in the form short_string + long_string + short_string from two
