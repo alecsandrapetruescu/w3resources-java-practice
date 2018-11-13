@@ -38,7 +38,8 @@ public class BasePart1Practice {
 //        printSystemTime();
 //        printCurrentDateTimeFormated();
 //        printOddNumbers();
-        printCheckEvenNumber(scanner);
+//        printCheckEvenNumber(scanner);
+        printDivisibleNumbers();
     }
 
     /**
@@ -491,7 +492,7 @@ public class BasePart1Practice {
     /**
      * 46. Write a Java program to display the system time.
      * Sample Output:
-     *
+     * <p>
      * Current Date time: Fri Jun 16 14:17:40 IST 2017
      */
     private static void printSystemTime() {
@@ -501,7 +502,7 @@ public class BasePart1Practice {
     /**
      * 47. Write a Java program to display the current date time in specific format.
      * Sample Output:
-     *
+     * <p>
      * Now: 2017/06/16 08:52:03.066
      */
     private static void printCurrentDateTimeFormated() {
@@ -509,10 +510,11 @@ public class BasePart1Practice {
         formater.setCalendar(Calendar.getInstance(TimeZone.getTimeZone("GTM")));
         System.out.println(String.format("Now: %s%n \n", formater.format(System.currentTimeMillis())));
     }
+
     /**
      * 48. Write a Java program to print the odd numbers from 1 to 99. Prints one number per line.
      * Sample Output:
-     *
+     * <p>
      * 1
      * 3
      * 5
@@ -538,7 +540,7 @@ public class BasePart1Practice {
      * 49. Write a Java program to accept a number and check the number is even or not. Prints 1 if the number is even
      * or 0 if the number is odd.
      * Sample Output:
-     *
+     * <p>
      * Input a number: 20
      * 1
      */
@@ -555,18 +557,35 @@ public class BasePart1Practice {
     /**
      * 50. Write a Java program to print numbers between 1 to 100 which are divisible by 3, 5 and by both.
      * Sample Output:
-     *
+     * <p>
      * Divided by 3:
      * 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57
      * , 60, 63, 66, 69, 72, 75, 78, 81, 84, 87, 90, 93, 96, 99,
-     *
+     * <p>
      * Divided by 5:
      * 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90,
      * 95,
-     *
+     * <p>
      * Divided by 3 & 5:
      * 15, 30, 45, 60, 75, 90,
      */
+    private static void printDivisibleNumbers() {
+        System.out.println("Divided by 3: ");
+        for (int i = 1; i < 100; i++) {
+            if (i % 3 == 0) System.out.print(i + ", ");
+        }
+
+        System.out.println("\nDivided by 5: ");
+        for (int i = 1; i < 100; i++) {
+            if (i % 5 == 0) System.out.print(i + ", ");
+        }
+
+        System.out.println("\nDivided by 3 & 5: ");
+        for (int i = 1; i < 100; i++) {
+            if (i % 3 == 0 && i % 5 == 0) System.out.print(i + ", ");
+        }
+        System.out.println("\n");
+    }
 
     /**
      * 52. Write a Java program to calculate the sum of two integers and return true if the sum is equal to a third
