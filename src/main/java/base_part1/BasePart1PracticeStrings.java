@@ -28,7 +28,8 @@ public class BasePart1PracticeStrings {
 //        duplicateLastChars(scanner);
 //        printFirstHalf(scanner);
 //        createStringFromTwoStrings(scanner);
-        concatenateTwoStringsAndRemoveFirstChar(scanner);
+//        concatenateTwoStringsAndRemoveFirstChar(scanner);
+        createThreeCharStringFromString(scanner);
     }
 
     /**
@@ -411,7 +412,22 @@ public class BasePart1PracticeStrings {
      * Sample Output:
      *
      * ###
+     *
+     * @param scanner
      */
+    private static void createThreeCharStringFromString(Scanner scanner) {
+        System.out.println("Enter word:");
+        String word = scanner.next();
+        String newWord = "";
+        if (word.length() >= 3) {
+            newWord = word.substring(0, 3);
+        } else if(word.length() == 1) {
+            newWord = word + "##";
+        } else {
+            newWord = "###";
+        }
+        System.out.println(String.format("Sample Output: %s", newWord));
+    }
 
     /**
      * 73. Write a Java program to create a new string taking first and last characters from two given strings. If the
