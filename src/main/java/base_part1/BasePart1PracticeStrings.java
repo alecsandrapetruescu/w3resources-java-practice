@@ -24,7 +24,8 @@ public class BasePart1PracticeStrings {
 //        convertToLowercase(scanner);
 //        penultimateWord(scanner);
 //        reverseWord(scanner);
-        insertWordInTheMiddle(scanner);
+//        insertWordInTheMiddle(scanner);
+        duplicateLastChars(scanner);
     }
 
     /**
@@ -252,7 +253,7 @@ public class BasePart1PracticeStrings {
     /**
      * 59. Write a Java program to convert a given string into lowercase.
      * Sample Output:
-     *
+     * <p>
      * Input a String: THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.
      * the quick brown fox jumps over the lazy dog.
      */
@@ -264,7 +265,7 @@ public class BasePart1PracticeStrings {
     /**
      * 60. Write a Java program to find the penultimate (next to last) word of a sentence.
      * Sample Output:
-     *
+     * <p>
      * Input a String: The quick brown fox jumps over the lazy dog.
      * Penultimate word: lazy
      */
@@ -278,7 +279,7 @@ public class BasePart1PracticeStrings {
     /**
      * 61. Write a Java program to reverse a word.
      * Sample Output:
-     *
+     * <p>
      * Input a word: dsaf
      * Reverse word: fasd
      */
@@ -291,7 +292,7 @@ public class BasePart1PracticeStrings {
      * 67. Write a Java program to insert a word in the middle of the another string.
      * Insert "Tutorial" in the middle of "Python 3.0", so result will be Python Tutorial 3.0
      * Sample Output:
-     *
+     * <p>
      * Python Tutorial 3.0
      */
     private static void insertWordInTheMiddle(Scanner scanner) {
@@ -299,8 +300,8 @@ public class BasePart1PracticeStrings {
         String sentence = scanner.nextLine();
         System.out.println("Enter word to insert in the middle:");
         String word = scanner.next();
-        List<String> words = new ArrayList<>(Arrays.asList(sentence.split("\\s"))) ;
-        words.add(Math.round(words.size()/2), word);
+        List<String> words = new ArrayList<>(Arrays.asList(sentence.split("\\s")));
+        words.add(Math.round(words.size() / 2), word);
         String newSentence = words.stream().collect(Collectors.joining(" "));
         System.out.println(String.format("New sentence: %s", newSentence));
     }
@@ -311,8 +312,21 @@ public class BasePart1PracticeStrings {
      * Sample Output:
      *
      * 3.03.03.03.0
+     * @param scanner
      */
-
+    private static void duplicateLastChars(Scanner scanner) {
+        System.out.println("Enter word:");
+        String word = scanner.next();
+        int nrOfCopies = 4;
+        int nrOfChars = 3;
+        String lastChars = word.substring(word.length() - nrOfChars);
+        String newChars = "";
+        while (nrOfCopies > 0) {
+            newChars += lastChars;
+            nrOfCopies--;
+        }
+        System.out.println(newChars);
+    }
 
     /**
      * 69. Write a Java program to extract the first half of a string of even length.
