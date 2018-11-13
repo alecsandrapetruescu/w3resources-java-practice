@@ -36,7 +36,8 @@ public class BasePart1Practice {
 //        generateExpression(scanner);
 //        printFileSize("/home/students/abc.txt");
 //        printSystemTime();
-        printCurrentDateTimeFormated();
+//        printCurrentDateTimeFormated();
+        printOddNumbers();
     }
 
     /**
@@ -524,6 +525,13 @@ public class BasePart1Practice {
      * 97
      * 99
      */
+    private static void printOddNumbers() {
+        for (int i = 1; i < 100; i++) {
+            if (i % 2 != 0) {
+                System.out.println(i);
+            }
+        }
+    }
 
     /**
      * 49. Write a Java program to accept a number and check the number is even or not. Prints 1 if the number is even
