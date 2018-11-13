@@ -26,7 +26,8 @@ public class BasePart1PracticeStrings {
 //        reverseWord(scanner);
 //        insertWordInTheMiddle(scanner);
 //        duplicateLastChars(scanner);
-        printFirstHalf(scanner);
+//        printFirstHalf(scanner);
+        createStringFromTwoStrings(scanner);
     }
 
     /**
@@ -351,7 +352,32 @@ public class BasePart1PracticeStrings {
      * Sample Output:
      *
      * PythonTutorialPython
+     *
+     * @param scanner
      */
+    private static void createStringFromTwoStrings(Scanner scanner) {
+        System.out.println("Enter first word:");
+        String firstWord = scanner.next();
+        System.out.println("Enter second word:");
+        String secondWord = scanner.next();
+        String result = "";
+        if (firstWord.length() > secondWord.length()) {
+            result = build(secondWord, firstWord);
+        } else {
+            result = build(firstWord, secondWord);
+        }
+        System.out.println(String.format("Sample Output: %s", result));
+    }
+
+    /**
+     *
+     * @param shortWord
+     * @param longWord
+     * @return
+     */
+    private static String build(String shortWord, String longWord) {
+        return shortWord + longWord + shortWord;
+    }
 
     /**
      * 71. Write a Java program to create the concatenation of the two strings except removing the first character of
