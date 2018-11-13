@@ -27,7 +27,8 @@ public class BasePart1PracticeStrings {
 //        insertWordInTheMiddle(scanner);
 //        duplicateLastChars(scanner);
 //        printFirstHalf(scanner);
-        createStringFromTwoStrings(scanner);
+//        createStringFromTwoStrings(scanner);
+        concatenateTwoStringsAndRemoveFirstChar(scanner);
     }
 
     /**
@@ -312,8 +313,9 @@ public class BasePart1PracticeStrings {
      * 68. Write a Java program to create a new string of 4 copies of the last 3 characters of the original string. The
      * length of the original string must be 3 and above.
      * Sample Output:
-     *
+     * <p>
      * 3.03.03.03.0
+     *
      * @param scanner
      */
     private static void duplicateLastChars(Scanner scanner) {
@@ -341,7 +343,7 @@ public class BasePart1PracticeStrings {
     private static void printFirstHalf(Scanner scanner) {
         System.out.println("Test Data:");
         String word = scanner.next();
-        System.out.println(String.format("Sample Output: %s", word.substring(0, Math.round(word.length()/2))));
+        System.out.println(String.format("Sample Output: %s", word.substring(0, Math.round(word.length() / 2))));
     }
 
     /**
@@ -350,7 +352,7 @@ public class BasePart1PracticeStrings {
      * Test Data: Str1 = Python
      * Str2 = Tutorial
      * Sample Output:
-     *
+     * <p>
      * PythonTutorialPython
      *
      * @param scanner
@@ -370,7 +372,6 @@ public class BasePart1PracticeStrings {
     }
 
     /**
-     *
      * @param shortWord
      * @param longWord
      * @return
@@ -385,9 +386,23 @@ public class BasePart1PracticeStrings {
      * Test Data: Str1 = Python
      * Str2 = Tutorial
      * Sample Output:
-     *
+     * <p>
      * ythonutorial
+     *
+     * @param scanner
      */
+    private static void concatenateTwoStringsAndRemoveFirstChar(Scanner scanner) {
+        System.out.println("Enter first word:");
+        String firstWord = scanner.next();
+        System.out.println("Enter second word:");
+        String secondWord = scanner.next();
+        String result = removeFirstChar(firstWord) + removeFirstChar(secondWord);
+        System.out.println(String.format("Sample Output: %s", result));
+    }
+
+    private static String removeFirstChar(String word) {
+        return word.substring(1);
+    }
 
     /**
      * 72. Write a Java program to create a new string taking first three characters from a given string. If the length
