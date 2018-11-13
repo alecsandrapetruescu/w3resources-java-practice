@@ -1,5 +1,6 @@
 package base_part1;
 
+import java.io.File;
 import java.util.Scanner;
 
 import static base_part1.OperationType.*;
@@ -30,6 +31,7 @@ public class BasePart1Practice {
         distanceBetweenPoints(scanner);
         displayThreeDigitUniqueNumbers();
         generateExpression(scanner);
+        printFileSize("/home/students/abc.txt");
     }
 
     /**
@@ -439,10 +441,10 @@ public class BasePart1Practice {
      */
     private static void displayThreeDigitUniqueNumbers() {
         int countNumbers = 0;
-        for(int i = 1; i <= 4; i++){
-            for(int j = 1; j <= 4; j++){
-                for(int k = 1; k <= 4; k++){
-                    if(k != i && k != j && i != j){
+        for (int i = 1; i <= 4; i++) {
+            for (int j = 1; j <= 4; j++) {
+                for (int k = 1; k <= 4; k++) {
+                    if (k != i && k != j && i != j) {
                         countNumbers++;
                         System.out.println(i + "" + j + "" + k);
                     }
@@ -455,7 +457,7 @@ public class BasePart1Practice {
     /**
      * 44. Write a Java program that accepts an integer (n) and computes the value of n+nn+nnn.
      * Sample Output:
-     *
+     * <p>
      * Input number: 5
      * 5 + 55  + 555
      */
@@ -468,10 +470,16 @@ public class BasePart1Practice {
     /**
      * 45. Write a Java program to find the size of a specified file.
      * Sample Output:
-     *
+     * <p>
      * /home/students/abc.txt  : 0 bytes
      * /home/students/test.txt : 0 bytes
+     *
+     * @param path file
      */
+    private static void printFileSize(String path) {
+        File file = new File(path);
+        System.out.println(String.format("%s : %d", path, file.length()));
+    }
 
     /**
      * 46. Write a Java program to display the system time.
