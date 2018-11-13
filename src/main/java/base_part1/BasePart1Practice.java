@@ -39,7 +39,8 @@ public class BasePart1Practice {
 //        printCurrentDateTimeFormated();
 //        printOddNumbers();
 //        printCheckEvenNumber(scanner);
-        printDivisibleNumbers();
+//        printDivisibleNumbers();
+        calculateSumOfTwoAndValidateWithThird(scanner);
     }
 
     /**
@@ -591,12 +592,34 @@ public class BasePart1Practice {
      * 52. Write a Java program to calculate the sum of two integers and return true if the sum is equal to a third
      * integer.
      * Sample Output:
-     *
+     * <p>
      * Input the first number : 5
      * Input the second number: 10
      * Input the third number : 15
      * The result is: true
+     *
+     * @param scanner
      */
+    private static void calculateSumOfTwoAndValidateWithThird(Scanner scanner) {
+        System.out.println(String.format("Input the %s number: ", "first"));
+        int firstNumber = ScannerNumberFormatter.getIntegerNumber(scanner);
+        System.out.println(String.format("Input the %s number: ", "second"));
+        int secondNumber = ScannerNumberFormatter.getIntegerNumber(scanner);
+        System.out.println(String.format("Input the %s number: ", "third"));
+        int thirdNumber = ScannerNumberFormatter.getIntegerNumber(scanner);
+        System.out.println(String.format("The result is: %s ", isSumOfTwoEqualWithThird(firstNumber, secondNumber, thirdNumber)));
+    }
+
+    /**
+     * Sum of two compared with third
+     * @param a
+     * @param b
+     * @param c
+     * @return
+     */
+    private static boolean isSumOfTwoEqualWithThird(int a, int b, int c) {
+        return ((a + b) == c || (a + c) == b || (b + c) == a);
+    }
 
     /**
      * 53. Write a Java program that accepts three integers from the user and return true if the second number is
