@@ -29,6 +29,7 @@ public class BasePart1Practice {
         areaOfPolygon(scanner);
         distanceBetweenPoints(scanner);
         displayThreeDigitUniqueNumbers();
+        generateExpression(scanner);
     }
 
     /**
@@ -458,6 +459,11 @@ public class BasePart1Practice {
      * Input number: 5
      * 5 + 55  + 555
      */
+    private static void generateExpression(Scanner scanner) {
+        System.out.println("Input number:");
+        int number = getIntegerNumber(scanner);
+        System.out.println(String.format("%d + %d%d + %d%d%d", number, number, number, number, number, number));
+    }
 
     /**
      * 45. Write a Java program to find the size of a specified file.
