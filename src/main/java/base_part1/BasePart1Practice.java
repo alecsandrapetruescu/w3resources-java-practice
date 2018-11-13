@@ -32,6 +32,7 @@ public class BasePart1Practice {
         displayThreeDigitUniqueNumbers();
         generateExpression(scanner);
         printFileSize("/home/students/abc.txt");
+        printSystemTime();
     }
 
     /**
@@ -487,6 +488,9 @@ public class BasePart1Practice {
      *
      * Current Date time: Fri Jun 16 14:17:40 IST 2017
      */
+    private static void printSystemTime() {
+        System.out.println(String.format("Current Date time: %tc%n \n", System.currentTimeMillis()));
+    }
 
     /**
      * 47. Write a Java program to display the current date time in specific format.
