@@ -1,7 +1,10 @@
 package base_part1;
 
 import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Scanner;
+import java.util.TimeZone;
 
 import static base_part1.OperationType.*;
 import static base_part1.ScannerNumberFormatter.getDoubleNumber;
@@ -11,28 +14,29 @@ public class BasePart1Practice {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        calculateSumOfTwo(scanner);
-        calculateDivideOfTwo(scanner);
-        calculateEcuation(scanner);
-        productOfTwoNumbers(scanner);
-        allOperationsOfTwoNumbers(scanner);
-        multiplicationTable(scanner);
-        printExpression(scanner);
-        areaAndPerimeterOfCircle(scanner);
-        averageOfThree(scanner);
-        areaAndPerimeterOfRectangle(scanner);
-        swapVariables(scanner);
-        addTwoBinaryNumbers(scanner);
-        multiplyTwoBinaryNumbers(scanner);
-        compareTwoNumbers(scanner);
-        sumOfDigits(scanner);
-        areaOfHexagon(scanner);
-        areaOfPolygon(scanner);
-        distanceBetweenPoints(scanner);
-        displayThreeDigitUniqueNumbers();
-        generateExpression(scanner);
-        printFileSize("/home/students/abc.txt");
-        printSystemTime();
+//        calculateSumOfTwo(scanner);
+//        calculateDivideOfTwo(scanner);
+//        calculateEcuation(scanner);
+//        productOfTwoNumbers(scanner);
+//        allOperationsOfTwoNumbers(scanner);
+//        multiplicationTable(scanner);
+//        printExpression(scanner);
+//        areaAndPerimeterOfCircle(scanner);
+//        averageOfThree(scanner);
+//        areaAndPerimeterOfRectangle(scanner);
+//        swapVariables(scanner);
+//        addTwoBinaryNumbers(scanner);
+//        multiplyTwoBinaryNumbers(scanner);
+//        compareTwoNumbers(scanner);
+//        sumOfDigits(scanner);
+//        areaOfHexagon(scanner);
+//        areaOfPolygon(scanner);
+//        distanceBetweenPoints(scanner);
+//        displayThreeDigitUniqueNumbers();
+//        generateExpression(scanner);
+//        printFileSize("/home/students/abc.txt");
+//        printSystemTime();
+        printCurrentDateTimeFormated();
     }
 
     /**
@@ -498,7 +502,11 @@ public class BasePart1Practice {
      *
      * Now: 2017/06/16 08:52:03.066
      */
-
+    private static void printCurrentDateTimeFormated() {
+        SimpleDateFormat formater = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss.SSS");
+        formater.setCalendar(Calendar.getInstance(TimeZone.getTimeZone("GTM")));
+        System.out.println(String.format("Now: %s%n \n", formater.format(System.currentTimeMillis())));
+    }
     /**
      * 48. Write a Java program to print the odd numbers from 1 to 99. Prints one number per line.
      * Sample Output:
