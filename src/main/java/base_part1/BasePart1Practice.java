@@ -28,6 +28,7 @@ public class BasePart1Practice {
         areaOfHexagon(scanner);
         areaOfPolygon(scanner);
         distanceBetweenPoints(scanner);
+        displayThreeDigitUniqueNumbers();
     }
 
     /**
@@ -431,11 +432,24 @@ public class BasePart1Practice {
      * 123
      * 124
      * ...
-     *
      * 431
      * 432
      * Total number of the three-digit-number is 24
      */
+    private static void displayThreeDigitUniqueNumbers() {
+        int countNumbers = 0;
+        for(int i = 1; i <= 4; i++){
+            for(int j = 1; j <= 4; j++){
+                for(int k = 1; k <= 4; k++){
+                    if(k != i && k != j && i != j){
+                        countNumbers++;
+                        System.out.println(i + "" + j + "" + k);
+                    }
+                }
+            }
+        }
+        System.out.println("Total number of the three-digit-number is " + countNumbers);
+    }
 
     /**
      * 44. Write a Java program that accepts an integer (n) and computes the value of n+nn+nnn.
