@@ -1,5 +1,6 @@
 package base_part1;
 
+import java.nio.CharBuffer;
 import java.nio.charset.Charset;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -33,7 +34,8 @@ public class BasePart1PracticeStrings {
 //        validateStartsWithWord(scanner);
 //        rotateFromLeftToRightByOffset(scanner);
 //        firstOccurrence(scanner);
-        findAllTheLongestWords();
+//        findAllTheLongestWords();
+        hasUniqueChars(scanner);
     }
 
     /**
@@ -557,8 +559,24 @@ public class BasePart1PracticeStrings {
      * 141. Write a Java program to check if a given string has all unique characters.
      * Sample Output: Original String : xyyz
      * String has all unique characters: false
+     *
+     * @param scanner
      */
+    private static void hasUniqueChars(Scanner scanner) {
+        System.out.println("Original String : ");
+        String sentence = scanner.nextLine();
+        System.out.println(String.format("String has all unique characters: %s", hasUniqueChars(sentence)));
+    }
 
+    /**
+     * check if a given string has all unique characters
+     * @param text
+     * @return
+     */
+    private static boolean hasUniqueChars(String text) {
+        return CharBuffer.wrap(text.toCharArray()).chars().distinct().count() == text.length()  ;
+    }
+    
     /**
      * 142. Write a Java program to check if two given strings are anagrams or not.
      * According to Wikipedia "An anagram is a word or phrase formed by rearranging the letters of a different word or
