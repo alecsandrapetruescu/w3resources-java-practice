@@ -34,7 +34,8 @@ public class BasePart1PracticeStrings {
 //        createStringWithFirstAndLastCharFromTwoStrings(scanner);
 //        createStringWithLastThreeChars(scanner);
 //        validateStartsWithWord(scanner);
-        rotateFromLeftToRightByOffset(scanner);
+//        rotateFromLeftToRightByOffset(scanner);
+        firstOccurrence(scanner);
     }
 
     /**
@@ -517,6 +518,13 @@ public class BasePart1PracticeStrings {
     /**
      * 118. Write a Java program to get the first occurrence (Position starts from 0.) of a string within a given string.
      */
+    private static void firstOccurrence(Scanner scanner) {
+        System.out.println("Enter sentence: ");
+        String sentence = scanner.nextLine();
+        System.out.println("Enter word: ");
+        String word = scanner.next();
+        System.out.println(String.format("First occurrence of %s, is at index %d", word, sentence.indexOf(word)));
+    }
 
     /**
      * 138. Write a Java program to find all of the longest word in a given dictionary.
