@@ -35,7 +35,8 @@ public class BasePart1PracticeStrings {
 //        rotateFromLeftToRightByOffset(scanner);
 //        firstOccurrence(scanner);
 //        findAllTheLongestWords();
-        hasUniqueChars(scanner);
+//        hasUniqueChars(scanner);
+        areAnagrams(scanner);
     }
 
     /**
@@ -576,7 +577,7 @@ public class BasePart1PracticeStrings {
     private static boolean hasUniqueChars(String text) {
         return CharBuffer.wrap(text.toCharArray()).chars().distinct().count() == text.length()  ;
     }
-    
+
     /**
      * 142. Write a Java program to check if two given strings are anagrams or not.
      * According to Wikipedia "An anagram is a word or phrase formed by rearranging the letters of a different word or
@@ -585,7 +586,24 @@ public class BasePart1PracticeStrings {
      * Sample Output: String-1 : wxyz
      * String-2 : zyxw
      * Check if two given strings are anagrams or not?: true
+     *
+     * @param scanner
      */
+    private static void areAnagrams(Scanner scanner) {
+        System.out.println("String-1 : ");
+        String firstString = scanner.next();
+        System.out.println("String-2 : ");
+        String secondString = scanner.next();
+        boolean areAnagrams = false;
+        if (firstString.length() == secondString.length()) {
+            char[] first = firstString.toCharArray();
+            char[] second = secondString.toCharArray();
+            Arrays.sort(first);
+            Arrays.sort(second);
+            areAnagrams = Arrays.equals(first, second);
+        }
+        System.out.println(String.format("Check if two given strings are anagrams or not?: %s", areAnagrams));
+    }
 
     /**
      *
