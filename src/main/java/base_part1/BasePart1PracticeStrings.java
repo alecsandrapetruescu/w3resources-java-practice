@@ -36,7 +36,8 @@ public class BasePart1PracticeStrings {
 //        firstOccurrence(scanner);
 //        findAllTheLongestWords();
 //        hasUniqueChars(scanner);
-        areAnagrams(scanner);
+//        areAnagrams(scanner);
+        printFirstUniqueChar(scanner);
     }
 
     /**
@@ -606,13 +607,32 @@ public class BasePart1PracticeStrings {
     }
 
     /**
-     *
      * 148. Write a Java program to find the index of the first unique character in a given string, assume that there is
      * at least one unique character in the string.
      * Sample Output:
      * Original String: wresource
      * First unique character of the above: 0
+     *
+     * @param scanner
      */
+    private static void printFirstUniqueChar(Scanner scanner) {
+        System.out.println("Original String:");
+        String text = scanner.nextLine();
+        char character = getFirstUniqueCharacter(text);
+        System.out.println(String.format("First unique character of the above: %s", String.valueOf(character)));
+    }
+
+    private static char getFirstUniqueCharacter(String text) {
+        char[] chars = text.toCharArray();
+        char character = '\u0000';
+        for (char c : chars) {
+            if (text.indexOf(c) != -1 && text.indexOf(c) == text.lastIndexOf(c)) {
+                character = c;
+                break;
+            }
+        }
+        return character;
+    }
 
     /**
      * 149. Write a Java program to check if a given string is a permutation of another given string.
