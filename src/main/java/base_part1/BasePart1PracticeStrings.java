@@ -31,7 +31,8 @@ public class BasePart1PracticeStrings {
 //        concatenateTwoStringsAndRemoveFirstChar(scanner);
 //        createThreeCharStringFromString(scanner);
 //        createStringWithFirstAndLastCharFromTwoStrings(scanner);
-        createStringWithLastThreeChars(scanner);
+//        createStringWithLastThreeChars(scanner);
+        validateStartsWithWord(scanner);
     }
 
     /**
@@ -482,7 +483,16 @@ public class BasePart1PracticeStrings {
      * Sample Output:
      *
      * true
+     *
+     * @param scanner
      */
+     private static void validateStartsWithWord(Scanner scanner) {
+         System.out.println("Enter sentence: ");
+         String sentence = scanner.nextLine();
+         System.out.println("Enter word, to validate if sentence start with it: ");
+         String word = scanner.next();
+         System.out.println(String.format("Sample Output: %s", sentence.startsWith(word)));
+     }
 
     /**
      * 114. Write a Java program to given a string and an offset, rotate string by offset (rotate from left to right).
