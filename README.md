@@ -1,5 +1,5 @@
 ## Java practice - [w3resource](https://www.w3resource.com/java-exercises/)
-- [] [Basic Exercises Part-I: ](https://www.w3resource.com/java-exercises/basic/index.php)
+- [ ] [Basic Exercises Part-I: ](https://www.w3resource.com/java-exercises/basic/index.php)
     - Converters [Solutions](src/main/java/base_part1/BasePart1PracticeConverters.java)
     - Numbers [Solutions](src/main/java/base_part1/BasePart1Practice.java)
     - Strings [Solutions](src/main/java/base_part1/BasePart1PracticeStrings.java)
