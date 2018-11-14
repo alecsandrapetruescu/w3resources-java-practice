@@ -6,6 +6,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class BasePart1PracticeStrings {
     public static void main(String[] args) {
@@ -32,7 +33,8 @@ public class BasePart1PracticeStrings {
 //        createThreeCharStringFromString(scanner);
 //        createStringWithFirstAndLastCharFromTwoStrings(scanner);
 //        createStringWithLastThreeChars(scanner);
-        validateStartsWithWord(scanner);
+//        validateStartsWithWord(scanner);
+        rotateFromLeftToRightByOffset(scanner);
     }
 
     /**
@@ -496,7 +498,21 @@ public class BasePart1PracticeStrings {
 
     /**
      * 114. Write a Java program to given a string and an offset, rotate string by offset (rotate from left to right).
+     *
+     * @param scanner
      */
+    private static void rotateFromLeftToRightByOffset(Scanner scanner) {
+        System.out.println("Enter sentence: ");
+        String sentence = scanner.nextLine();
+        System.out.println("Enter offset: ");
+        int offset = scanner.nextInt();
+        char[] chars = sentence.toCharArray();
+        List<Character> characters = IntStream.range(0, chars.length).mapToObj(e -> chars[e]).collect(Collectors.toList());
+        List<Character> result = characters.subList(offset, characters.size());
+        result.addAll(characters.subList(0, offset));
+        String rotated = result.stream().map(c -> String.valueOf(c)).collect(Collectors.joining());
+        System.out.println(String.format("Rotated string is: %s", rotated));
+    }
 
     /**
      * 118. Write a Java program to get the first occurrence (Position starts from 0.) of a string within a given string.
