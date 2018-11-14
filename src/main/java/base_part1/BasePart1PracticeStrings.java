@@ -30,7 +30,8 @@ public class BasePart1PracticeStrings {
 //        createStringFromTwoStrings(scanner);
 //        concatenateTwoStringsAndRemoveFirstChar(scanner);
 //        createThreeCharStringFromString(scanner);
-        createStringWithFirstAndLastCharFromTwoStrings(scanner);
+//        createStringWithFirstAndLastCharFromTwoStrings(scanner);
+        createStringWithLastThreeChars(scanner);
     }
 
     /**
@@ -459,7 +460,21 @@ public class BasePart1PracticeStrings {
      * Sample Output:
      *
      * honPythonhon
+     *
+     * @param scanner
      */
+    private static void createStringWithLastThreeChars(Scanner scanner) {
+        System.out.println("Test data: ");
+        String word = scanner.next();
+        int minStringLength = 3;
+        if (word.length() < minStringLength) {
+            System.out.println("Invalid word length!");
+        }
+        String lastThreeChars = word.substring(word.length() - minStringLength);
+        StringBuilder builder = new StringBuilder();
+        String result = builder.append(lastThreeChars).append(word).append(lastThreeChars).toString();
+        System.out.println(String.format("Sample Output: %s", result));
+    }
 
     /**
      * 85. Write a Java program to check if a string starts with a specified word.
