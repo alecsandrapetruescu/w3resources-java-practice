@@ -37,7 +37,8 @@ public class BasePart1PracticeStrings {
 //        findAllTheLongestWords();
 //        hasUniqueChars(scanner);
 //        areAnagrams(scanner);
-        printFirstUniqueChar(scanner);
+//        printFirstUniqueChar(scanner);
+        arePermutations(scanner);
     }
 
     /**
@@ -639,5 +640,10 @@ public class BasePart1PracticeStrings {
      * Sample Output:
      * Original strings: xxyz yxzx
      * true
+     *
+     * @param scanner
      */
+    private static void arePermutations(Scanner scanner) {
+        areAnagrams(scanner);
+    }
 }
