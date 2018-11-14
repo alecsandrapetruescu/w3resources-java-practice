@@ -1,10 +1,7 @@
 package base_part1;
 
 import java.nio.charset.Charset;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -35,7 +32,8 @@ public class BasePart1PracticeStrings {
 //        createStringWithLastThreeChars(scanner);
 //        validateStartsWithWord(scanner);
 //        rotateFromLeftToRightByOffset(scanner);
-        firstOccurrence(scanner);
+//        firstOccurrence(scanner);
+        findAllTheLongestWords();
     }
 
     /**
@@ -547,6 +545,13 @@ public class BasePart1PracticeStrings {
      * }
      * Result: "cat", "dog", "red"
      */
+    private static void findAllTheLongestWords() {
+        List<String> words = Arrays.asList("cat", "flag", "green", "country", "w3resource", "w2resource");
+        Map<Integer, List<String>> mapBySize = words.stream().collect(Collectors.groupingBy(w-> w.length()));
+        int largestNumberOfChars = mapBySize.keySet().stream().skip(mapBySize.keySet().size() - 1).findFirst().get();
+        String result = mapBySize.get(largestNumberOfChars).stream().collect(Collectors.joining(", "));
+        System.out.println(String.format("Result: %s", result));
+    }
 
     /**
      * 141. Write a Java program to check if a given string has all unique characters.
