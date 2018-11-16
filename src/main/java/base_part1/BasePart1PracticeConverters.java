@@ -7,19 +7,20 @@ import static base_part1.ScannerNumberFormatter.getIntegerNumber;
 public class BasePart1PracticeConverters {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        convertDecimalToBinary(scanner);
-        convertDecimalToHexadecimal(scanner);
-        convertDecimalToOctal(scanner);
-        convertBinaryToDecimal(scanner);
-        convertBinaryToHexadecimal(scanner);
-        convertBinaryToOctal(scanner);
-        convertOctalToDecimal(scanner);
-        convertOctalToBinary(scanner);
-        convertOctalToHexadecimal(scanner);
-        convertHexadecimalToDecimal(scanner);
-        convertHexadecimalToBinary(scanner);
-        convertHexadecimalToOctal(scanner);
-        convertToInteger(scanner);
+//        convertDecimalToBinary(scanner);
+//        convertDecimalToHexadecimal(scanner);
+//        convertDecimalToOctal(scanner);
+//        convertBinaryToDecimal(scanner);
+//        convertBinaryToHexadecimal(scanner);
+//        convertBinaryToOctal(scanner);
+//        convertOctalToDecimal(scanner);
+//        convertOctalToBinary(scanner);
+//        convertOctalToHexadecimal(scanner);
+//        convertHexadecimalToDecimal(scanner);
+//        convertHexadecimalToBinary(scanner);
+//        convertHexadecimalToOctal(scanner);
+//        convertToInteger(scanner);
+        convertIntoHourMinuteSeconds(scanner);
     }
 
     /**
@@ -224,5 +225,23 @@ public class BasePart1PracticeConverters {
         String numberAsString = scanner.next();
         System.out.println(String.format("Input a number(string): %s", numberAsString));
         System.out.println(String.format("The integer value is: %d", Integer.valueOf(numberAsString)));
+    }
+
+    /**
+     * 55. Write a Java program to convert seconds to hour, minute and seconds.
+     * Sample Output:
+     *
+     * Input seconds: 86399
+     * 23:59:59
+     *
+     * @param scanner
+     */
+    private static void convertIntoHourMinuteSeconds(Scanner scanner) {
+        System.out.print("Input seconds: ");
+        int seconds = scanner.nextInt();
+        int minutes = (seconds / 60) % 60;
+        int hours = seconds / 60 / 60;
+        seconds = seconds % 60;
+        System.out.println(String.format("%d:%d:%d", hours, minutes, seconds));
     }
 }

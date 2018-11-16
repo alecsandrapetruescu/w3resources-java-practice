@@ -675,13 +675,7 @@ public class BasePart1Practice {
     private static boolean haveSameLastDigit(int first, int second, int third) {
         return (first % 10 == second % 10) || (second % 10 == third % 10) || (first % 10 == third % 10);
     }
-    /**
-     * 55. Write a Java program to convert seconds to hour, minute and seconds.
-     * Sample Output:
-     *
-     * Input seconds: 86399
-     * 23:59:59
-     */
+
 
     /**
      * 56. Write a Java program to find the number of integers within the range of two specified numbers and that are
