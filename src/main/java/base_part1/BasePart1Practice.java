@@ -40,7 +40,8 @@ public class BasePart1Practice {
 //        printOddNumbers();
 //        printCheckEvenNumber(scanner);
 //        printDivisibleNumbers();
-        calculateSumOfTwoAndValidateWithThird(scanner);
+//        calculateSumOfTwoAndValidateWithThird(scanner);
+        printCompareThreeNumbers(scanner);
     }
 
     /**
@@ -631,7 +632,22 @@ public class BasePart1Practice {
      * Input the second number: 10
      * Input the third number : 15
      * The result is: true
+     *
+     * @param scanner
      */
+    private static void printCompareThreeNumbers(Scanner scanner){
+        System.out.println(String.format("Input the %s number: ", "first"));
+        int firstNumber = ScannerNumberFormatter.getIntegerNumber(scanner);
+        System.out.println(String.format("Input the %s number: ", "second"));
+        int secondNumber = ScannerNumberFormatter.getIntegerNumber(scanner);
+        System.out.println(String.format("Input the %s number: ", "third"));
+        int thirdNumber = ScannerNumberFormatter.getIntegerNumber(scanner);
+        System.out.println(String.format("The result is: %s ", compareThreeNumbers(firstNumber, secondNumber, thirdNumber) ));
+    }
+
+    private static boolean compareThreeNumbers(int first, int second, int third) {
+        return (second > first) && (third > second) ? true : false;
+    }
 
     /**
      * 54. Write a Java program that accepts three integers from the user and return true if two or more of them
