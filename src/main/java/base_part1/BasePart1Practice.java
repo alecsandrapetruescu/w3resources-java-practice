@@ -42,7 +42,8 @@ public class BasePart1Practice {
 //        printDivisibleNumbers();
 //        calculateSumOfTwoAndValidateWithThird(scanner);
 //        printCompareThreeNumbers(scanner);
-        printTwoOrMoreHaveSameLastDigit(scanner);
+//        printTwoOrMoreHaveSameLastDigit(scanner);
+        printNumbersWithinRangeDivisibleByAnother(scanner);
     }
 
     /**
@@ -676,7 +677,6 @@ public class BasePart1Practice {
         return (first % 10 == second % 10) || (second % 10 == third % 10) || (first % 10 == third % 10);
     }
 
-
     /**
      * 56. Write a Java program to find the number of integers within the range of two specified numbers and that are
      * divisible by another number.
@@ -685,7 +685,27 @@ public class BasePart1Practice {
      * Sample Output:
      *
      * 5
+     *
+     * @param scanner
      */
+    private static void printNumbersWithinRangeDivisibleByAnother(Scanner scanner) {
+        System.out.println("Input the starting number: ");
+        int startIndex = ScannerNumberFormatter.getIntegerNumber(scanner);
+        System.out.println("Input the ending number: ");
+        int endIndex = ScannerNumberFormatter.getIntegerNumber(scanner);
+        System.out.println("Input divisible by: ");
+        int divisibleNumber = ScannerNumberFormatter.getIntegerNumber(scanner);
+        int countNumbers = 0;
+        for (int index=startIndex; index<=endIndex; index++) {
+            if (index % divisibleNumber != 0) continue;
+            countNumbers++;
+        }
+        System.out.println(String.format("The number of integers within the range %d..%d and that are divisible by % is: %d",
+                startIndex,
+                endIndex,
+                divisibleNumber,
+                countNumbers));
+    }
 
     /**
      * 57. Write a Java program to accepts an integer and count the factors of the number.
