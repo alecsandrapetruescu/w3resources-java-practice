@@ -41,7 +41,8 @@ public class BasePart1Practice {
 //        printCheckEvenNumber(scanner);
 //        printDivisibleNumbers();
 //        calculateSumOfTwoAndValidateWithThird(scanner);
-        printCompareThreeNumbers(scanner);
+//        printCompareThreeNumbers(scanner);
+        printTwoOrMoreHaveSameLastDigit(scanner);
     }
 
     /**
@@ -658,8 +659,22 @@ public class BasePart1Practice {
      * Input the second number: 10
      * Input the third number : 15
      * The result is: true
+     *
+     * @param scanner
      */
+    private static void printTwoOrMoreHaveSameLastDigit(Scanner scanner) {
+        System.out.println(String.format("Input the %s number: ", "first"));
+        int firstNumber = ScannerNumberFormatter.getIntegerNumber(scanner);
+        System.out.println(String.format("Input the %s number: ", "second"));
+        int secondNumber = ScannerNumberFormatter.getIntegerNumber(scanner);
+        System.out.println(String.format("Input the %s number: ", "third"));
+        int thirdNumber = ScannerNumberFormatter.getIntegerNumber(scanner);
+        System.out.println(String.format("The result is: %s ", haveSameLastDigit(firstNumber, secondNumber, thirdNumber) ));
+    }
 
+    private static boolean haveSameLastDigit(int first, int second, int third) {
+        return (first % 10 == second % 10) || (second % 10 == third % 10) || (first % 10 == third % 10);
+    }
     /**
      * 55. Write a Java program to convert seconds to hour, minute and seconds.
      * Sample Output:
