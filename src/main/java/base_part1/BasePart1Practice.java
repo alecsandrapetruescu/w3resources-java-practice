@@ -46,7 +46,8 @@ public class BasePart1Practice {
 //        printNumbersWithinRangeDivisibleByAnother(scanner);
 //        printCountFactors(scanner);
 //        printIsGreaterThan20(scanner);
-        printCompared(scanner);
+//        printCompared(scanner);
+        printHaveCommonDigit(scanner);
     }
 
     /**
@@ -786,6 +787,22 @@ public class BasePart1Practice {
      * Input the second number: 45
      * Result: true
      */
+    private static void printHaveCommonDigit(Scanner scanner){
+        System.out.print("Input the first number : ");
+        int first = ScannerNumberFormatter.getIntegerNumber(scanner);
+        System.out.print("Input the second number: ");
+        int second = ScannerNumberFormatter.getIntegerNumber(scanner);
+        System.out.println(String.format("Result : %s", haveCommonDigit(first, second)));
+    }
+
+    private static boolean haveCommonDigit(int first, int second) {
+        if (first > 25 || second > 75) return false;
+        int firstDigit1 = first % 10;
+        int firstDigit2 = second % 10;
+        int secondDigit1 = first / 10;
+        int secondDigit2 = second / 10;
+        return (firstDigit1 == firstDigit2 || secondDigit1 == secondDigit2 || firstDigit1 == secondDigit2 || firstDigit2 == secondDigit1);
+    }
 
     /**
      * 65. Write a Java program to calculate the modules of two numbers without using any inbuilt modulus operator.
