@@ -43,7 +43,8 @@ public class BasePart1Practice {
 //        calculateSumOfTwoAndValidateWithThird(scanner);
 //        printCompareThreeNumbers(scanner);
 //        printTwoOrMoreHaveSameLastDigit(scanner);
-        printNumbersWithinRangeDivisibleByAnother(scanner);
+//        printNumbersWithinRangeDivisibleByAnother(scanner);
+        printCountFactors(scanner);
     }
 
     /**
@@ -714,7 +715,21 @@ public class BasePart1Practice {
      * Input an integer: 25
      * 3
      */
+    private static void printCountFactors(Scanner scanner) {
+        System.out.println("Input number: ");
+        int number = ScannerNumberFormatter.getIntegerNumber(scanner);
+        System.out.println(String.format("Number of factor is : %d", countFactors(number)));
+    }
 
+    private static int countFactors(int number) {
+        int count = 0;
+        int i= 1;
+        while (i < number) {
+            if(number % i == 0) count++;
+            i++;
+        }
+        return count;
+    }
 
     /**
      * 62. Write a Java program that accepts three integer values and return true if one of them is 20 or more less than
