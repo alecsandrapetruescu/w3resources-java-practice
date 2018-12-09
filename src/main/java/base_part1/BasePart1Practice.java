@@ -908,10 +908,6 @@ public class BasePart1Practice {
     }
 
     /**
-     * 90. Write a Java program to get the value of the environment variable PATH, TEMP, USERNAME. 
-     */
-
-    /**
      * 91. Write a Java program to measure how long some code takes to execute in nanoseconds. 
      */
 

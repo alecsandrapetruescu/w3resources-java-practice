@@ -4,7 +4,8 @@ public class BasePart1PracticeSystem {
     public static void main(String[] args) {
 //        checkJavaInstallation();
 //        printSystemEnvAndProperties();
-        printSystemSecurityManager();
+//        printSystemSecurityManager();
+        printEnvVariables();
     }
 
     /**
@@ -46,4 +47,12 @@ public class BasePart1PracticeSystem {
         System.out.println(System.getSecurityManager());
     }
 
+    /**
+     * 90. Write a Java program to get the value of the environment variable PATH, TEMP, USERNAME.
+     */
+    private static void printEnvVariables() {
+        System.out.println("Environment variable PATH: " + System.getenv("PATH"));
+        System.out.println("Environment variable TEMP: " + System.getenv("TEMP"));
+        System.out.println("\nEnvironment variable USERNAME: " + System.getenv("USERNAME"));
+    }
 }
