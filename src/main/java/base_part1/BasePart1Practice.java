@@ -45,7 +45,8 @@ public class BasePart1Practice {
 //        printTwoOrMoreHaveSameLastDigit(scanner);
 //        printNumbersWithinRangeDivisibleByAnother(scanner);
 //        printCountFactors(scanner);
-        printIsGreaterThan20(scanner);
+//        printIsGreaterThan20(scanner);
+        printCompared(scanner);
     }
 
     /**
@@ -762,6 +763,19 @@ public class BasePart1Practice {
      * Input the second number: 13
      * Result: 13
      */
+    private static void printCompared(Scanner scanner) {
+        System.out.print("Input the first number : ");
+        int first = ScannerNumberFormatter.getIntegerNumber(scanner);
+        System.out.print("Input the second number: ");
+        int second = ScannerNumberFormatter.getIntegerNumber(scanner);
+        System.out.println(String.format("Result : %d", compare(first, second)));
+    }
+
+    private static int compare(int first, int second) {
+        if (first == second) return 0;
+        if (first % 6 == second % 6) return first > second ? second : first;
+        return first > second ? first : second;
+    }
 
     /**
      * 64. Write a Java program that accepts two integer values between 25 to 75 and return true if there is a common
