@@ -47,7 +47,8 @@ public class BasePart1Practice {
 //        printCountFactors(scanner);
 //        printIsGreaterThan20(scanner);
 //        printCompared(scanner);
-        printHaveCommonDigit(scanner);
+//        printHaveCommonDigit(scanner);
+        printCalculateModules(scanner);
     }
 
     /**
@@ -812,6 +813,15 @@ public class BasePart1Practice {
      * Input the second number: 7
      * 5
      */
+    private static void printCalculateModules(Scanner scanner) {
+        System.out.print("Input the first number : ");
+        int first = ScannerNumberFormatter.getIntegerNumber(scanner);
+        System.out.print("Input the second number: ");
+        int second = ScannerNumberFormatter.getIntegerNumber(scanner);
+        int divided = first / second;
+        int result = first - (divided * second);
+        System.out.println(result);
+    }
 
     /**
      * 66. Write a Java program to compute the sum of the first 100 prime numbers.
