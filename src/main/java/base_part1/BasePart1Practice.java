@@ -50,6 +50,7 @@ public class BasePart1Practice {
 //        calculateSumOfPrimeNumbers();
 //        processNumber(scanner);
 //        printSumOfDigits(scanner);
+        printSumOfDigitsRepresentedBySingleDigit(scanner);
     }
 
     /**
@@ -910,6 +911,13 @@ public class BasePart1Practice {
     /**
      * 108. Write a Java program to add all the digits of a given positive integer until the result has a single digit. 
      */
+    private static void printSumOfDigitsRepresentedBySingleDigit(Scanner scanner) {
+        System.out.print("Input the number : ");
+        int number = ScannerNumberFormatter.getIntegerNumber(scanner);
+        int sumOfDigits = sumOfDigits(number);
+        if (sumOfDigits / 10 != 0) sumOfDigits = sumOfDigits(sumOfDigits);
+        System.out.println(String.format("Sum of digits represented by a digit is : %d", sumOfDigits));
+    }
 
     /**
      * 109. Write a Java program to form a staircase shape of n coins where every k-th row must have exactly k coins. 
