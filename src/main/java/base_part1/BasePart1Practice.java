@@ -2,9 +2,7 @@ package base_part1;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Scanner;
-import java.util.TimeZone;
+import java.util.*;
 
 import static base_part1.OperationType.*;
 import static base_part1.ScannerNumberFormatter.getDoubleNumber;
@@ -50,7 +48,8 @@ public class BasePart1Practice {
 //        printHaveCommonDigit(scanner);
 //        printCalculateModules(scanner);
 //        calculateSumOfPrimeNumbers();
-        processNumber(scanner);
+//        processNumber(scanner);
+        printSumOfDigits(scanner);
     }
 
     /**
@@ -375,11 +374,7 @@ public class BasePart1Practice {
     private static void sumOfDigits(Scanner scanner) {
         System.out.println("Enter number: ");
         int number = ScannerNumberFormatter.getIntegerNumber(scanner);
-        int sum = 0;
-        while (number > 0) {
-            sum += number % 10;
-            number = number / 10;
-        }
+        int sum = sumOfDigits(number);
         System.out.println("The sum of the digits is: " + sum);
     }
 
@@ -870,6 +865,47 @@ public class BasePart1Practice {
      * 87. Write a Java program than read an integer and calculate the sum of its digits and write the number of each
      * digit of the sum in English.
      */
+    private static void printSumOfDigits(Scanner scanner) {
+        System.out.print("Input the number : ");
+        int number = ScannerNumberFormatter.getIntegerNumber(scanner);
+        int sumOfDigits = sumOfDigits(number);
+        System.out.println(String.format("Sum of the digits of the said number: %d . In English: %s",
+                number, convertNumberToString(sumOfDigits)));
+    }
+
+    private static int sumOfDigits(int number) {
+        int sum = 0;
+        while (number > 0) {
+            sum += number % 10;
+            number = number / 10;
+        }
+        return sum;
+    }
+
+    private static String convertNumberToString(int number) {
+        String covert = String.valueOf(number);
+        StringBuilder builder = new StringBuilder();
+        Map<Integer, String> numbers = getNumbers();
+        for (Character c : covert.toCharArray()) {
+            builder.append(numbers.get(Character.getNumericValue(c)));
+            builder.append(" ");
+        }
+        return builder.toString();
+    }
+    private static Map<Integer, String> getNumbers() {
+        return new HashMap<Integer, String>() {{
+            put(0, "zero");
+            put(1, "one");
+            put(2, "two");
+            put(3, "three");
+            put(4, "four");
+            put(5,"five");
+            put(6, "six");
+            put(7, "seven");
+            put(8,"eight");
+            put (9,"nine");
+        }};
+    }
 
     /**
      *
