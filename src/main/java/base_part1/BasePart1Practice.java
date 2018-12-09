@@ -50,8 +50,6 @@ public class BasePart1Practice {
 //        calculateSumOfPrimeNumbers();
 //        processNumber(scanner);
 //        printSumOfDigits(scanner);
-//        printSystemEnvAndProperties();
-        printSystemSecurityManager();
     }
 
     /**
@@ -907,26 +905,6 @@ public class BasePart1Practice {
             put(8,"eight");
             put (9,"nine");
         }};
-    }
-
-    /**
-     *
-     * 88. Write a Java program to get the current system environment and system properties. 
-     */
-    private static void printSystemEnvAndProperties() {
-        System.out.println("System enviroment is :");
-        System.out.println(System.getenv());
-        System.out.println("System properties are :");
-        System.out.println(System.getProperties());
-    }
-
-    /**
-     * 89. Write a Java program to check whether a security manager has already been established for the current
-     * application or not.
-     */
-    private static void printSystemSecurityManager() {
-        System.out.println("System secutiry manager");
-        System.out.println(System.getSecurityManager());
     }
 
     /**
