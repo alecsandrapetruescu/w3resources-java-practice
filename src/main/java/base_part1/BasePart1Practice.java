@@ -50,7 +50,8 @@ public class BasePart1Practice {
 //        calculateSumOfPrimeNumbers();
 //        processNumber(scanner);
 //        printSumOfDigits(scanner);
-        printSystemEnvAndProperties();
+//        printSystemEnvAndProperties();
+        printSystemSecurityManager();
     }
 
     /**
@@ -923,6 +924,10 @@ public class BasePart1Practice {
      * 89. Write a Java program to check whether a security manager has already been established for the current
      * application or not.
      */
+    private static void printSystemSecurityManager() {
+        System.out.println("System secutiry manager");
+        System.out.println(System.getSecurityManager());
+    }
 
     /**
      * 90. Write a Java program to get the value of the environment variable PATH, TEMP, USERNAME. 
