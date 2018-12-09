@@ -48,7 +48,8 @@ public class BasePart1Practice {
 //        printIsGreaterThan20(scanner);
 //        printCompared(scanner);
 //        printHaveCommonDigit(scanner);
-        printCalculateModules(scanner);
+//        printCalculateModules(scanner);
+        calculateSumOfPrimeNumbers();
     }
 
     /**
@@ -829,7 +830,24 @@ public class BasePart1Practice {
      *
      * Sum of the first 100 prime numbers: 24133
      */
+    private static void calculateSumOfPrimeNumbers() {
+        int counter = 2;
+        int sum = 0;
+        while(counter < 100) {
+            if (isPrimeNumber(counter)) sum += counter;
+            counter++;
+        }
+        System.out.println(String.format("Result : %s", sum));
+    }
 
+    private static boolean isPrimeNumber(int number) {
+        for (int i = 2; i <= (int) Math.floor(Math.sqrt(number)); i++) {
+            if (number % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
 
     /**
      * 86. Write a Java program start with an integer n, divide n by 2 if n is even or multiply by 3 and add 1 if n is
