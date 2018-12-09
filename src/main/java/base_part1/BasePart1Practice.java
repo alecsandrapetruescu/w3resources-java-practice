@@ -44,7 +44,8 @@ public class BasePart1Practice {
 //        printCompareThreeNumbers(scanner);
 //        printTwoOrMoreHaveSameLastDigit(scanner);
 //        printNumbersWithinRangeDivisibleByAnother(scanner);
-        printCountFactors(scanner);
+//        printCountFactors(scanner);
+        printIsGreaterThan20(scanner);
     }
 
     /**
@@ -741,6 +742,15 @@ public class BasePart1Practice {
      * Input the third number : 25
      * false
      */
+    private static void printIsGreaterThan20(Scanner scanner) {
+        System.out.print("Input the first number : ");
+        int first = ScannerNumberFormatter.getIntegerNumber(scanner);
+        System.out.print("Input the second number: ");
+        int second = ScannerNumberFormatter.getIntegerNumber(scanner);
+        System.out.print("Input the third number : ");
+        int third = ScannerNumberFormatter.getIntegerNumber(scanner);
+        System.out.println((Math.abs(first - second) >= 20 || Math.abs(second - third) >= 20 || Math.abs(third - first) >= 20));
+    }
 
     /**
      * 63. Write a Java program that accepts two integer values from the user and return the larger values. However if
