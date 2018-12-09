@@ -49,7 +49,8 @@ public class BasePart1Practice {
 //        printCompared(scanner);
 //        printHaveCommonDigit(scanner);
 //        printCalculateModules(scanner);
-        calculateSumOfPrimeNumbers();
+//        calculateSumOfPrimeNumbers();
+        processNumber(scanner);
     }
 
     /**
@@ -853,6 +854,17 @@ public class BasePart1Practice {
      * 86. Write a Java program start with an integer n, divide n by 2 if n is even or multiply by 3 and add 1 if n is
      * odd, repeat the process until n = 1.
      */
+    private static void processNumber(Scanner scanner) {
+        System.out.print("Input the number : ");
+        int number = ScannerNumberFormatter.getIntegerNumber(scanner);
+        while (number != 1) {
+            if (number % 2 == 0) {
+                number = number / 2;
+            } else {
+               number = number * 3 + 1;
+            }
+        }
+    }
 
     /**
      * 87. Write a Java program than read an integer and calculate the sum of its digits and write the number of each
