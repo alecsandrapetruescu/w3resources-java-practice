@@ -56,7 +56,8 @@ public class BasePart1Practice {
 //        printNumberIsPowerOf4(scanner);
 //        printSumOfTwoWithoutArithmeticOperator(scanner);
 //        printTrailingZerosInFactorial(scanner);
-        printIsPalindrome(scanner);
+//        printIsPalindrome(scanner);
+        printTextByMultiples();
     }
 
     /**
@@ -1010,6 +1011,15 @@ public class BasePart1Practice {
      * of the number and print "Buzz" for the multiples of five. When number is divided by both three and five, print
      * "fizz buzz".
      */
+    private static void printTextByMultiples() {
+        IntStream.rangeClosed(1, 100).forEach(i ->
+        {
+            if (i % 3 == 0 && i % 5 == 0) System.out.println("fizz buzz");
+            if (i % 3 == 0 && i % 5 != 0) System.out.println("Fizz");
+            if (i % 3 != 0 && i % 5 == 0) System.out.println("Buzz");
+
+        });
+    }
 
     /**
      * 117. Write a Java program to compute the square root of an given integer. 
