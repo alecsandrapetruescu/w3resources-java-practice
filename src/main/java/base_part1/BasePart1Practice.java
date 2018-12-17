@@ -51,7 +51,8 @@ public class BasePart1Practice {
 //        processNumber(scanner);
 //        printSumOfDigits(scanner);
 //        printSumOfDigitsRepresentedBySingleDigit(scanner);
-        printNumberOfStaircaseRows(scanner);
+//        printNumberOfStaircaseRows(scanner);
+        printNumberIsPowerOf4(scanner);
     }
 
     /**
@@ -928,10 +929,20 @@ public class BasePart1Practice {
         int number = ScannerNumberFormatter.getIntegerNumber(scanner);
         System.out.println(String.format("Number of rows is : %d", (Math.sqrt(number * 2 + 0.25) - 0.5)));
     }
+
     /**
      * 110. Write a Java program to check whether an given integer is a power of 4 or not. 
      * Given num = 64, return true. Given num = 6, return false.
      */
+    private static void printNumberIsPowerOf4(Scanner scanner) {
+        System.out.print("Input the number : ");
+        int number = ScannerNumberFormatter.getIntegerNumber(scanner);
+        System.out.println(String.format("Number is power of 4 : %s", isPowerOf4(number)));
+    }
+
+    private static boolean isPowerOf4(int number) {
+        return ((number & (number - 1)) == 0);
+    }
 
     /**
      * 111. Write a Java program to add two numbers without using any arithmetic operators. 
