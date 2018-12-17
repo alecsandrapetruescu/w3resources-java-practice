@@ -62,7 +62,8 @@ public class BasePart1Practice {
 //        reverseLinkedList();
 //        printPreoderBinaryTree();
 //        printInoderBinaryTree();
-        printPostoderBinaryTree();
+//        printPostoderBinaryTree();
+        printMaximumDepthBinaryTree();
     }
 
     /**
@@ -1110,10 +1111,15 @@ public class BasePart1Practice {
         System.out.println("Post order traversal of binary tree is: ");
         tree.printPostorder();
     }
+
     /**
      * 130. Write a Java program to find the maximum depth of a given a binary tree. 
      * Sample Output: The Maximum depth of the binary tree is: 3
      */
+    private static void printMaximumDepthBinaryTree() {
+        BinaryTree tree = getBinaryTree();
+        System.out.println("The Maximum depth of the binary tree is: " + tree.maxDepth(tree.root));
+    }
 
     /**
      * 133. Write a Java program to find a path from top left to bottom in right direction which minimizes the sum of
