@@ -59,7 +59,8 @@ public class BasePart1Practice {
 //        printIsPalindrome(scanner);
 //        printTextByMultiples();
 //        printSqrt(scanner);
-        reverseLinkedList();
+//        reverseLinkedList();
+        printPreoderBinaryTree();
     }
 
     /**
@@ -1059,6 +1060,24 @@ public class BasePart1Practice {
      * 40   50
      * Expected output: 10 20 40 50 30
      */
+    private static void printPreoderBinaryTree() {
+        BinaryTree tree = getBinaryTree();
+        System.out.println("Preorder traversal of binary tree is: ");
+        tree.printPreorder();
+    }
+
+    private static BinaryTree getBinaryTree() {
+        BinaryTree tree = new BinaryTree();
+        tree.root = new Node(55);
+        tree.root.left = new Node(21);
+        tree.root.right = new Node(80);
+        tree.root.left.left = new Node(9);
+        tree.root.left.right = new Node(29);
+        tree.root.right.left = new Node(76);
+        tree.root.right.right = new Node(91);
+        return tree;
+    }
+
 
     /**
      * 126. Write a Java program to get the inorder traversal of its nodes' values of a given a binary tree. 
