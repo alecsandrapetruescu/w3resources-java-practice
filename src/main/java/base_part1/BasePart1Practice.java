@@ -52,7 +52,8 @@ public class BasePart1Practice {
 //        printSumOfDigits(scanner);
 //        printSumOfDigitsRepresentedBySingleDigit(scanner);
 //        printNumberOfStaircaseRows(scanner);
-        printNumberIsPowerOf4(scanner);
+//        printNumberIsPowerOf4(scanner);
+        printSumOfTwoWithoutArithmeticOperator(scanner);
     }
 
     /**
@@ -948,6 +949,18 @@ public class BasePart1Practice {
      * 111. Write a Java program to add two numbers without using any arithmetic operators. 
      * Given x = 10 and y = 12; result = 22
      */
+    private static void printSumOfTwoWithoutArithmeticOperator(Scanner scanner) {
+        System.out.print("Input the first number : ");
+        int firstNumber = ScannerNumberFormatter.getIntegerNumber(scanner);
+        System.out.print("Input the second number : ");
+        int secondNumber = ScannerNumberFormatter.getIntegerNumber(scanner);
+        while(secondNumber != 0) {
+            int tempNumber = firstNumber & secondNumber;
+            firstNumber = firstNumber ^ secondNumber;
+            secondNumber = tempNumber << 1;
+        }
+        System.out.println(String.format("Result is : %s", firstNumber));
+    }
 
     /**
      * 112. Write a Java program to compute the number of trailing zeros in a factorial. 
