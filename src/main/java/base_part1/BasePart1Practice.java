@@ -57,7 +57,8 @@ public class BasePart1Practice {
 //        printSumOfTwoWithoutArithmeticOperator(scanner);
 //        printTrailingZerosInFactorial(scanner);
 //        printIsPalindrome(scanner);
-        printTextByMultiples();
+//        printTextByMultiples();
+        printSqrt(scanner);
     }
 
     /**
@@ -1026,7 +1027,11 @@ public class BasePart1Practice {
      * Input a positive integer: 25
      * Square root of 25 is: 5
      */
-
+    private static void printSqrt(Scanner scanner) {
+        System.out.print("Input a positive integer: ");
+        int number = ScannerNumberFormatter.getIntegerNumber(scanner);
+        System.out.println(String.format("Square root of %d is: %d", number, Math.sqrt(number)));
+    }
 
     /**
      * 121. Write a Java program to reverse a given linked list. 
