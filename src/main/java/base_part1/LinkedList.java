@@ -77,6 +77,27 @@ public class LinkedList {
         return new LinkedList(head);
     }
 
+    public ListNode removeNthFromEnd(ListNode head, int n) {
+        ListNode p = head;
+        int size = 0;
+        while (p != null) {
+            size++;
+            p = p.next;
+        }
+        if (n == size) {
+            head = head.next;
+        } else {
+            int index = size - n;
+            ListNode t = head;
+            while (index > 1) {
+                t = t.next;
+                index--;
+            }
+            t.next = t.next.next;
+        }
+        return head;
+    }
+
     void printList() {
         ListNode temp = head;
         while (temp != null) {
@@ -86,5 +107,6 @@ public class LinkedList {
             }
             temp = temp.next;
         }
+        System.out.println();
     }
 }

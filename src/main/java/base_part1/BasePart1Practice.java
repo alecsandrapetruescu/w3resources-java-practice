@@ -66,7 +66,8 @@ public class BasePart1Practice {
 //        printMaximumDepthBinaryTree();
 //        printDistinctLinkedList();
 //        mergeOverlappingIntervals();
-        mergeTwoSortedLists();
+//        mergeTwoSortedLists();
+        printRemoveNthElementFromEnd();
     }
 
     /**
@@ -1224,7 +1225,20 @@ public class BasePart1Practice {
      * After removing 2nd element from end:
      * 1 2 3 5
      */
-
+    private static void printRemoveNthElementFromEnd() {
+        LinkedList list = new LinkedList();
+        list.push(5);
+        list.push(4);
+        list.push(3);
+        list.push(2);
+        list.push(1);
+        System.out.println("Original node:");
+        list.printList();
+        int number = 2;
+        list.head = list.removeNthFromEnd(list.head, number);
+        System.out.println("After removing 2nd element from end:");
+        list.printList();
+    }
 
     /**
      * 147. Write a Java program to find the number of bits required to flip to convert two given integers. 
