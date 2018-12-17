@@ -7,20 +7,27 @@ public class BinaryTree {
         root = null;
     }
 
-    void printPreorder(Node node) {
-        if (node == null)
-            return;
+    public void printPreorder() {
+        printPreorder(root);
+    }
 
-        /* Print data of node */
+    private void printPreorder(Node node) {
+        if (node == null) return;
         System.out.print(node.key + " ");
         printPreorder(node.left);
         printPreorder(node.right);
     }
 
-    void printPreorder() {
-        printPreorder(root);
+    public void printInorder() {
+        printInorder(root);
     }
 
+    private void printInorder(Node node) {
+        if (node == null) return;
+        printInorder(node.left);
+        System.out.print(node.key + " ");
+        printInorder(node.right);
+    }
 }
 
 class Node {
