@@ -67,7 +67,8 @@ public class BasePart1Practice {
 //        printDistinctLinkedList();
 //        mergeOverlappingIntervals();
 //        mergeTwoSortedLists();
-        printRemoveNthElementFromEnd();
+//        printRemoveNthElementFromEnd();
+        printNumberOfBitsRequiredToSwap(scanner);
     }
 
     /**
@@ -1245,7 +1246,21 @@ public class BasePart1Practice {
      * Sample Output:
      * 2
      */
+    private static void printNumberOfBitsRequiredToSwap(Scanner scanner) {
+        System.out.print("Input first integer: ");
+        int first = ScannerNumberFormatter.getIntegerNumber(scanner);
+        System.out.print("Input second integer: ");
+        int second = ScannerNumberFormatter.getIntegerNumber(scanner);
+        System.out.println(String.format("number of bits required to flip %d", bitSwapCount(first, second)));
+    }
 
+    private static int bitSwapCount(int first, int second) {
+        int count = 0;
+        for (int i = first ^ second; i != 0; i = i >>> 1) {
+            count += i & 1;
+        }
+        return count;
+    }
 
     /**
      * 150. Write a Java program to test if a binary tree is a subtree of another binary tree. 
