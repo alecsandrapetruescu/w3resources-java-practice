@@ -63,8 +63,9 @@ public class BasePart1Practice {
 //        printPreoderBinaryTree();
 //        printInoderBinaryTree();
 //        printPostoderBinaryTree();
-        printMaximumDepthBinaryTree();
-        printDistinctLinkedList();
+//        printMaximumDepthBinaryTree();
+//        printDistinctLinkedList();
+        mergeOverlappingIntervals();
     }
 
     /**
@@ -1153,7 +1154,45 @@ public class BasePart1Practice {
      * 8 10
      * 15 20
      */
+    private static void mergeOverlappingIntervals() {
+        ArrayList<Interval> list = new ArrayList<>();
+        list.add(new Interval(1, 3));
+        list.add(new Interval(2, 6));
+        list.add(new Interval(8, 10));
+        list.add(new Interval(15, 18));
+        list.add(new Interval(17, 20));
 
+        list = mergeIntervals(list);
+
+        for (Interval i : list) {
+            System.out.println(i.getStart() + " " + i.getEnd());
+        }
+    }
+
+    private static ArrayList<Interval> mergeIntervals(ArrayList<Interval> list) {
+        if (list.size() == 0 || list.size() == 1) return list;
+
+        Collections.sort(list, new IntervalComparator());
+
+        Interval first = list.get(0);
+        int start = first.getStart();
+        int end = first.getEnd();
+
+        ArrayList<Interval> result = new ArrayList<>();
+        for (int i = 1; i < list.size(); i++) {
+            Interval current = list.get(i);
+            if (current.getStart() <= end) {
+                end = Math.max(current.getEnd(), end);
+            } else {
+                result.add(new Interval(start, end));
+                start = current.getStart();
+                end = current.getEnd();
+            }
+        }
+
+        result.add(new Interval(start, end));
+        return result;
+    }
 
     /**
      * 143. Write a Java program to merge two given sorted lists. 
