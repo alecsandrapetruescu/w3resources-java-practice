@@ -50,7 +50,8 @@ public class BasePart1Practice {
 //        calculateSumOfPrimeNumbers();
 //        processNumber(scanner);
 //        printSumOfDigits(scanner);
-        printSumOfDigitsRepresentedBySingleDigit(scanner);
+//        printSumOfDigitsRepresentedBySingleDigit(scanner);
+        printNumberOfStaircaseRows(scanner);
     }
 
     /**
@@ -922,7 +923,11 @@ public class BasePart1Practice {
     /**
      * 109. Write a Java program to form a staircase shape of n coins where every k-th row must have exactly k coins. 
      */
-
+    private static void printNumberOfStaircaseRows(Scanner scanner) {
+        System.out.print("Input the number : ");
+        int number = ScannerNumberFormatter.getIntegerNumber(scanner);
+        System.out.println(String.format("Number of rows is : %d", (Math.sqrt(number * 2 + 0.25) - 0.5)));
+    }
     /**
      * 110. Write a Java program to check whether an given integer is a power of 4 or not. 
      * Given num = 64, return true. Given num = 6, return false.
