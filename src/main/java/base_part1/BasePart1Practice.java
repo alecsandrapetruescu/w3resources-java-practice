@@ -64,6 +64,7 @@ public class BasePart1Practice {
 //        printInoderBinaryTree();
 //        printPostoderBinaryTree();
         printMaximumDepthBinaryTree();
+        printDistinctLinkedList();
     }
 
     /**
@@ -1043,13 +1044,13 @@ public class BasePart1Practice {
      * Example: For linked list 20->40->60->80, the reversed linked list is 80->60->40->20
      */
     private static void reverseLinkedList() {
-        LinkedList<Integer> list = new LinkedList<>();
-        list.add(20);
-        list.add(40);
-        list.add(60);
-        list.add(80);
+        LinkedList list = new LinkedList();
+        list.push(20);
+        list.push(40);
+        list.push(60);
+        list.push(80);
         System.out.println("List is: " + list.toString());
-        Collections.reverse(list);
+        list.reverse(list.head);
         System.out.println("Reversed list is: " + list.toString());
     }
 
@@ -1122,27 +1123,29 @@ public class BasePart1Practice {
     }
 
     /**
-     * 133. Write a Java program to find a path from top left to bottom in right direction which minimizes the sum of
-     * all numbers along its path.
-     * Note: Move either down or right at any point in time.
-     * Sample Output: Sum of all numbers along its path: 13
-     */
-
-    /**
-     * 134. Write a Java program to find the distinct ways you can climb to the top (n steps to reach to the top) of
-     * stairs. Each time you can either climb 1 or 2 steps.
-     * Example: n = 5
-     * a) 1+1+1+1+1 = 5 b) 1+1+1+2 = 5 c) 1+2+2 = 5 d) 2+2+1 = 5 e) 2+1+1+1 = 5 f) 2+1+2 = 5 g) 1+2+1+1 = 5 h) 1+1+2+1 = 5
-     * Sample Output: Distinct ways can you climb to the top: 8
-     */
-
-    /**
      * 135. Write a Java program to remove duplicates from a sorted linked list. 
      * Original List with duplicate elements:
      * 12->12->13->14->15->15->16->17->17
      * After removing duplicates from the said list:
      * 12->13->14->15->16->17
      */
+    private static void printDistinctLinkedList() {
+        LinkedList list = new LinkedList();
+        list.push(12);
+        list.push(12);
+        list.push(13);
+        list.push(14);
+        list.push(15);
+        list.push(15);
+        list.push(16);
+        list.push(17);
+        list.push(17);
+        System.out.println("Original List with duplicate elements:");
+        list.printList();
+        list.removeDuplicates();
+        System.out.println("After removing duplicates from the said list:");
+        list.printList();
+    }
 
     /**
      * 140. Write a Java program to merge all overlapping Intervals from a given a collection of intervals. 
