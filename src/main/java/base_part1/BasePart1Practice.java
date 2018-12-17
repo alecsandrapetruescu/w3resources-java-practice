@@ -55,7 +55,8 @@ public class BasePart1Practice {
 //        printNumberOfStaircaseRows(scanner);
 //        printNumberIsPowerOf4(scanner);
 //        printSumOfTwoWithoutArithmeticOperator(scanner);
-        printTrailingZerosInFactorial(scanner);
+//        printTrailingZerosInFactorial(scanner);
+        printIsPalindrome(scanner);
     }
 
     /**
@@ -987,7 +988,23 @@ public class BasePart1Practice {
      * Is 151 is a palindrome number?
      * true
      */
+    private static void printIsPalindrome(Scanner scanner){
+        System.out.print("Input a positive integer: ");
+        int number = ScannerNumberFormatter.getIntegerNumber(scanner);
+        System.out.println(String.format("Number %d is a palindrome number? %s", number, isPalindrome(number)));
+    }
 
+    private static boolean isPalindrome(int number) {
+        String numberString = String.valueOf(number);
+        int start = 0;
+        int end = numberString.length();
+        boolean isPalindrome = false;
+        while (start < end) {
+            if(numberString.charAt(start++) != numberString.charAt(end--)) return isPalindrome;
+        }
+        isPalindrome = true;
+        return isPalindrome;
+    }
     /**
      * 116. Write a Java program which iterates the integers from 1 to 100. For multiples of three print "Fizz" instead
      * of the number and print "Buzz" for the multiples of five. When number is divided by both three and five, print
