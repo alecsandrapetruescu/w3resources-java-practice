@@ -61,7 +61,8 @@ public class BasePart1Practice {
 //        printSqrt(scanner);
 //        reverseLinkedList();
 //        printPreoderBinaryTree();
-        printInoderBinaryTree();
+//        printInoderBinaryTree();
+        printPostoderBinaryTree();
     }
 
     /**
@@ -1092,7 +1093,7 @@ public class BasePart1Practice {
      */
     private static void printInoderBinaryTree() {
         BinaryTree tree = getBinaryTree();
-        System.out.println("Preorder traversal of binary tree is: ");
+        System.out.println("Inorder traversal of binary tree is: ");
         tree.printInorder();
     }
 
@@ -1104,7 +1105,11 @@ public class BasePart1Practice {
      *  / \
      * 40   50
      */
-
+    private static void printPostoderBinaryTree() {
+        BinaryTree tree = getBinaryTree();
+        System.out.println("Post order traversal of binary tree is: ");
+        tree.printPostorder();
+    }
     /**
      * 130. Write a Java program to find the maximum depth of a given a binary tree. 
      * Sample Output: The Maximum depth of the binary tree is: 3

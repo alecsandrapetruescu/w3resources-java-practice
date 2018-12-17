@@ -28,6 +28,17 @@ public class BinaryTree {
         System.out.print(node.key + " ");
         printInorder(node.right);
     }
+
+    public void printPostorder() {
+        printPostorder(root);
+    }
+
+    private void printPostorder(Node node) {
+        if (node == null) return;
+        printPostorder(node.left);
+        printPostorder(node.right);
+        System.out.print(node.key + " ");
+    }
 }
 
 class Node {
