@@ -58,7 +58,8 @@ public class BasePart1Practice {
 //        printTrailingZerosInFactorial(scanner);
 //        printIsPalindrome(scanner);
 //        printTextByMultiples();
-        printSqrt(scanner);
+//        printSqrt(scanner);
+        reverseLinkedList();
     }
 
     /**
@@ -1037,7 +1038,16 @@ public class BasePart1Practice {
      * 121. Write a Java program to reverse a given linked list. 
      * Example: For linked list 20->40->60->80, the reversed linked list is 80->60->40->20
      */
-
+    private static void reverseLinkedList() {
+        LinkedList<Integer> list = new LinkedList<>();
+        list.add(20);
+        list.add(40);
+        list.add(60);
+        list.add(80);
+        System.out.println("List is: " + list.toString());
+        Collections.reverse(list);
+        System.out.println("Reversed list is: " + list.toString());
+    }
 
     /**
      * 125. Write a Java program to get the preorder traversal of its nodes' values of a given a binary tree. 
