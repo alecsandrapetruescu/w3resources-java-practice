@@ -68,7 +68,8 @@ public class BasePart1Practice {
 //        mergeOverlappingIntervals();
 //        mergeTwoSortedLists();
 //        printRemoveNthElementFromEnd();
-        printNumberOfBitsRequiredToSwap(scanner);
+//        printNumberOfBitsRequiredToSwap(scanner);
+        printIsSubtree();
     }
 
     /**
@@ -1265,7 +1266,21 @@ public class BasePart1Practice {
     /**
      * 150. Write a Java program to test if a binary tree is a subtree of another binary tree. 
      * Sample Output:
-     * Original strings: xxyz yxzx
      * true
      */
+    private static void printIsSubtree() {
+        TreeNode t1 = new TreeNode(1);
+        TreeNode t2 = new TreeNode(2);
+        TreeNode t3 = new TreeNode(3);
+        t1.left  = t2;
+        t1.right = t3;
+
+        TreeNode n1 = new TreeNode(1);
+        TreeNode n2 = new TreeNode(2);
+        TreeNode n3 = new TreeNode(3);
+        n1.left  = n2;
+        n1.right = n3;
+
+        System.out.println(BinaryTree.isSubtree(t1, n1));
+    }
 }
