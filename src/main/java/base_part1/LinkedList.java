@@ -1,17 +1,24 @@
 package base_part1;
 
 public class LinkedList {
-    Node head;
+    ListNode head;
+
+    public LinkedList() {
+    }
+
+    public LinkedList(ListNode head) {
+        this.head = head;
+    }
 
     public void push(int data) {
-        Node newNode = new Node(data);
+        ListNode newNode = new ListNode(data);
         newNode.next = head;
         head = newNode;
     }
 
     void removeDuplicates() {
-        Node current = head;
-        Node nextNext;
+        ListNode current = head;
+        ListNode nextNext;
         if (head == null)
             return;
         while (current.next != null) {
@@ -25,10 +32,10 @@ public class LinkedList {
         }
     }
 
-    Node reverse(Node node) {
-        Node prev_node = null;
-        Node current_node = node;
-        Node next_node = null;
+    ListNode reverse(ListNode node) {
+        ListNode prev_node = null;
+        ListNode current_node = node;
+        ListNode next_node = null;
         while (current_node != null) {
             next_node = current_node.next;
             current_node.next = prev_node;
@@ -39,8 +46,39 @@ public class LinkedList {
         return node;
     }
 
+    public static LinkedList merge(ListNode list1, ListNode list2) {
+        ListNode head = new ListNode(0);
+        ListNode mergedListNode = head;
+        while (list1 != null && list2 != null) {
+            if (list1.key < list2.key) {
+                mergedListNode.next = new ListNode(list1.key);
+                mergedListNode = mergedListNode.next;
+                list1 = list1.next;
+            } else {
+                mergedListNode.next = new ListNode(list2.key);
+                mergedListNode = mergedListNode.next;
+                list2 = list2.next;
+            }
+        }
+
+        while (list1 != null) {
+            mergedListNode.next = new ListNode(list1.key);
+            mergedListNode = mergedListNode.next;
+            list1 = list1.next;
+        }
+
+        while (list2 != null) {
+            mergedListNode.next = new ListNode(list2.key);
+            mergedListNode = mergedListNode.next;
+            list2 = list2.next;
+        }
+
+        head = head.next;
+        return new LinkedList(head);
+    }
+
     void printList() {
-        Node temp = head;
+        ListNode temp = head;
         while (temp != null) {
             System.out.print(temp.key);
             if (temp.next != null) {

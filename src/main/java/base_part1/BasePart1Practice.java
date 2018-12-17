@@ -65,7 +65,8 @@ public class BasePart1Practice {
 //        printPostoderBinaryTree();
 //        printMaximumDepthBinaryTree();
 //        printDistinctLinkedList();
-        mergeOverlappingIntervals();
+//        mergeOverlappingIntervals();
+        mergeTwoSortedLists();
     }
 
     /**
@@ -1200,6 +1201,20 @@ public class BasePart1Practice {
      * Merge Two Sorted ListsT:
      * 1 2 3 7 9 13 40
      */
+    private static void mergeTwoSortedLists() {
+        LinkedList firstList = new LinkedList();
+        firstList.push(7);
+        firstList.push(3);
+        firstList.push(2);
+        firstList.push(1);
+        LinkedList secondList = new LinkedList();
+        secondList.push(40);
+        secondList.push(13);
+        secondList.push(9);
+
+        LinkedList merged = LinkedList.merge(firstList.head, secondList.head);
+        merged.printList();
+    }
 
     /**
      * 145. Write a Java program to remove the nth element from the end of a given list. 
