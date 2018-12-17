@@ -1,10 +1,10 @@
 package base_part1;
 
-public class Node {
+public class TreeNode {
     int key;
-    Node left, right;
+    TreeNode left, right;
 
-    Node(int key) {
+    TreeNode(int key) {
         this.key = key;
         left = right = null;
     }

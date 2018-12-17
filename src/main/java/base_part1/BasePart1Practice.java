@@ -1076,13 +1076,13 @@ public class BasePart1Practice {
 
     private static BinaryTree getBinaryTree() {
         BinaryTree tree = new BinaryTree();
-        tree.root = new Node(55);
-        tree.root.left = new Node(21);
-        tree.root.right = new Node(80);
-        tree.root.left.left = new Node(9);
-        tree.root.left.right = new Node(29);
-        tree.root.right.left = new Node(76);
-        tree.root.right.right = new Node(91);
+        tree.root = new TreeNode(55);
+        tree.root.left = new TreeNode(21);
+        tree.root.right = new TreeNode(80);
+        tree.root.left.left = new TreeNode(9);
+        tree.root.left.right = new TreeNode(29);
+        tree.root.right.left = new TreeNode(76);
+        tree.root.right.right = new TreeNode(91);
         return tree;
     }
 
