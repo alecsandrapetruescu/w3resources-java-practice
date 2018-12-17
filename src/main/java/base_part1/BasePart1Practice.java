@@ -3,6 +3,7 @@ package base_part1;
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.stream.IntStream;
 
 import static base_part1.OperationType.*;
 import static base_part1.ScannerNumberFormatter.getDoubleNumber;
@@ -53,7 +54,8 @@ public class BasePart1Practice {
 //        printSumOfDigitsRepresentedBySingleDigit(scanner);
 //        printNumberOfStaircaseRows(scanner);
 //        printNumberIsPowerOf4(scanner);
-        printSumOfTwoWithoutArithmeticOperator(scanner);
+//        printSumOfTwoWithoutArithmeticOperator(scanner);
+        printTrailingZerosInFactorial(scanner);
     }
 
     /**
@@ -966,10 +968,22 @@ public class BasePart1Practice {
      * 112. Write a Java program to compute the number of trailing zeros in a factorial. 
      * 7! = 5040, therefore the output should be 1
      */
+    private static void printTrailingZerosInFactorial(Scanner scanner) {
+        System.out.print("Input the number : ");
+        int number = ScannerNumberFormatter.getIntegerNumber(scanner);
+        int factorial = IntStream.rangeClosed(1, number).reduce(1, (a, b) -> a * b);
+        String factorialString = String.valueOf(factorial);
+        int numberOfZeros = 0;
+        for (int i = factorialString.length() - 1; i >= 0; i--) {
+            if (factorialString.charAt(i) != '0') break;
+            numberOfZeros++;
+        }
+        System.out.println(String.format("Number of trailing zeros of the factorial %d is %d", number, numberOfZeros));
+    }
 
     /**
      * 115. Write a Java program to check if a positive number is a palindrome or not. 
-     * Input a positive integer: 151
+     IntStream.rangeClosed(0, number)     * Input a positive integer: 151
      * Is 151 is a palindrome number?
      * true
      */
