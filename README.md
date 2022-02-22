@@ -12,3 +12,5 @@
     - HashMap [Solutions](src/main/java/collection/HashMapPractice.java)
     - TreeMap [Solutions](src/main/java/collection/TreeMapPractice.java)
 - [x] [File Input-Output](https://www.w3resource.com/java-exercises/io/index.php) [Solutions](src/main/java/file_input_output/FilePractice.java)
+
+## [Code of conduct](https://www.eclipse.org/org/documents/Community_Code_of_Conduct.php)
